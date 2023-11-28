@@ -1,22 +1,22 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { MaterialsModule } from '../shared/materials/materials.module';
 
 
 @Component({
-  selector: 'app-data-bindung',
+  selector: 'app-data-binding',
   standalone: true,
   imports: [
     CommonModule,
     MaterialsModule,
     FormsModule,
   ],
-  templateUrl: './data-bindung.component.html',
-  styleUrl: './data-bindung.component.scss'
+  templateUrl: './data-binding.component.html',
+  styleUrl: './data-binding.component.scss'
 })
-export class DataBindungComponent	{
+export class DataBindingComponent	{
 
   FormModule: any = new FormsModule();
   
