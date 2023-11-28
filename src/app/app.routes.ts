@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { DataBindungComponent } from './data-binding/data-bindung.component';
+import { DataBindingComponent } from './data-binding/data-binding.component';
 
 export const routes: Routes = [
     {
-        path: '', component: DataBindungComponent 
+        path: '', component: DataBindingComponent 
     }
 ];
