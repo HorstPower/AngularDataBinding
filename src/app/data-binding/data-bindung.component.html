@@ -1,0 +1,137 @@
+<div class="BindingView">
+
+    <!-- String Databinding -->
+    <mat-card>
+        <mat-list>
+            <mat-list-item><h1>String Interpolation</h1></mat-list-item>
+            <mat-list-item><h2>One-Way-Binding</h2></mat-list-item>
+            <mat-divider></mat-divider>
+            <div class="logic">
+                <div class="symbols"><mat-icon>javascript</mat-icon><h1>-></h1><mat-icon>html</mat-icon></div>
+                <span class="hint">
+                     <p>Drücke click-Button (Event Binding)</p>
+                     <p>changeString() manipuliert String</p> 
+                </span>
+                <span class="binding">
+                    <!-- html Utf-codierung -->
+                    <!-- Bracket { = 123  -->
+                    <!-- Space = 160 -->
+                    <!-- Bracket } = 125  -->
+                        <p>&#123;</p>   
+                        <p>&#123;</p>
+                        <p>&#160;</p>
+                        {{theString}}
+                        <p>&#160;</p>
+                        <p>&#125;</p>
+                        <p>&#125;</p>
+                </span>
+            </div>
+        </mat-list>
+    </mat-card>
+
+     <!-- Property Binding -->
+     <mat-card>
+        <mat-list>
+            <mat-list-item><h1>Property Binding</h1></mat-list-item>
+            <mat-list-item><h2>One-Way-Binding</h2></mat-list-item>
+            <mat-divider></mat-divider>
+            <div class="logic">
+                <div class="symbols"><mat-icon>javascript</mat-icon><h1>-></h1><mat-icon>html</mat-icon></div>
+                <span class="hint">
+                     <p>die Eigenschaft [disabled] des butten </p>
+                     <p>wird durch eine Variable geändert </p> 
+                </span>
+                <span class="binding">
+                    <!-- html Utf-codierung -->
+                    <!-- Bracket [ = 91 -->
+                    <!-- Space = 160 -->
+                    <!-- Bracket ] = 93  -->
+                    <!-- equal = = 61 -->
+                    <!-- " = 34 -->
+                        <p>&#91;</p>   
+                        <p>&#160;</p>
+                        disabled
+                        <p>&#160;</p>
+                        <p>&#93;</p>
+                        <p>&#61;</p>
+                        <p>&#34;</p>
+                        {{hideButton}}
+                        <p>&#34;</p>
+                </span>
+                <span class="buttons">
+                    <button [disabled]="!hideButton" (click)="togglehide()" mat-raised-button color="warn">disable</button>
+                    <button [disabled]="hideButton" (click)="togglehide()" mat-raised-button color="warn">!disable</button>
+                </span>
+            </div>
+        </mat-list>
+    </mat-card>
+
+     <!-- Event Binding -->
+     <mat-card>
+        <mat-list>
+            <mat-list-item><h1>Event Binding</h1></mat-list-item>
+            <mat-list-item><h2>Event-Binding</h2></mat-list-item>
+            <mat-divider></mat-divider>
+            <div class="logic">
+                <div class="symbols"><mat-icon>html</mat-icon><h1>-></h1><mat-icon>javascript</mat-icon></div>
+                <span class="hint">
+                     <p>Das Click Event wird vom </p>
+                     <p> &#60;button&#62; gefeuert  </p> 
+                </span>
+                <span class="binding">
+                    <!-- html Utf-codierung -->
+                    <!-- Bracket ( = 40  -->
+                    <!-- Space = 160 -->
+                    <!-- Bracket ) = 41  -->
+                    <p>&#40;</p> <p>&#160;</p> click <p>&#160;</p> <p>&#41;</p>
+                    <p>&#61;</p> <p>&#34;</p> changeString() <p>&#34;</p>
+                </span>
+                <span class="buttons">
+                    <button (click)="changeString()" mat-raised-button color="warn">click</button>
+                </span>
+            </div>
+        </mat-list>
+    </mat-card>
+
+     <!-- ngModel -->
+     <mat-card>
+        <mat-list>
+            <mat-list-item><h1>ngModel</h1></mat-list-item>
+            <mat-list-item><h2>Two-Way-Binding</h2></mat-list-item>
+            <mat-divider></mat-divider>
+            <div class="logic">
+                <div class="symbols"><mat-icon>javascript</mat-icon><h1><-></h1><mat-icon>html</mat-icon></div>
+                <span class="hint">
+                     <p>FormsModule notwendig</p>
+                     <p>Speichert den wert selbst</p> 
+                </span>
+                <span class="binding">
+                    <!-- html Utf-codierung -->
+                    <!-- Bracket { = 123  -->
+                    <!-- Space = 160 -->
+                    <!-- Bracket } = 125  -->
+                    <p>&#91;</p>
+                    <p>&#40;</p>
+                    <p>&#160;</p>
+                    ngModel
+                    <p>&#160;</p>
+                    <p>&#41;</p>
+                    <p>&#93;</p>
+                    <p>&#61;</p>
+                    <p>&#34;</p>
+                    {{InputString}}
+                    <p>&#34;</p>
+                </span>
+                <span>
+                <mat-form-field>
+                    <mat-label>ngModel = {{InputString}}</mat-label>
+                    <input matInput [(ngModel)]="InputString">
+                </mat-form-field>
+                </span>
+            </div>
+        </mat-list>
+    </mat-card>
+
+</div>
+
+

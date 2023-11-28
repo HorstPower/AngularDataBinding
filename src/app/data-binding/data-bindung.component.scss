@@ -1,0 +1,108 @@
+.BindingView {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    padding: 15px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+mat-Card{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    min-width: 280px;
+    height: 350px;
+}
+
+mat-divider{
+    width: 250px;
+    margin: 10px;
+    border-width: 2px;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #fa6b0c;
+    text-align: start;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    font-style: bold;
+}
+
+.symbols {
+    display: flex;
+    width: 70%;
+    height: 40px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    & h1 {
+        display: flex;
+        justify-content: center;
+        width: 1.4em;
+    }
+    & mat-icon{
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: auto;
+        font-size: 3rem;
+        color: white;
+    }
+}
+
+.logic {
+    font-size: large;
+    color: rgb(199, 199, 199);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & .hint{
+        padding-top: 5px;
+        font-size: 0.8em;
+        & p{
+            margin: 0;
+            padding: 0;
+        }
+    }
+    & .binding {
+        display: flex;
+        margin-top: 30px;
+        color: aqua;
+        & p {
+            display: inline;
+            color: white;
+            font-size: 1.2em;
+        }
+    }
+}
+
+.buttons {
+    position: relative;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+mat-form-field {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    width:100%;
+}
