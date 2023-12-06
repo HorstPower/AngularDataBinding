@@ -1,12 +1,19 @@
-<span class="library">
-    <h1>library:</h1>
-    <div class="path">
-        <div>
-            <span><h2> <br> </h2><p></p></span>
-            <span><h2>/</h2><p>databinding</p></span>
-            <span><h2>/</h2><p>directives</p></span>
-        </div>
-    </div>
-</span>
+<mat-drawer-container class="completeFrame">
+    <mat-drawer mode="side" opened class="sideFrame">
+        <span class="libraryHeader">
+            <h1>library</h1>
+        </span>
+        <mat-nav-list role="navigation" #selection >
+            @for (selection of library; track selection) {
+                <a href="/{{selection}}" mat-list-item>{{selection}}</a>
+                <!-- <mat-list-item ><a routerLink="/databinding"></a>{{selection}}</mat-list-item> -->
+                <mat-divider></mat-divider>
+            }
+        </mat-nav-list>
+    </mat-drawer>
 
-<router-outlet></router-outlet>
+    <mat-drawer-content class="mainFrame">
+        <router-outlet></router-outlet>
+    </mat-drawer-content>
+
+</mat-drawer-container>

@@ -18,6 +18,7 @@ import { MaterialsModule } from '../shared/materials/materials.module';
 })
 export class DataBindingComponent	{
 
+
   FormModule: any = new FormsModule();
   
 
@@ -31,11 +32,7 @@ export class DataBindingComponent	{
   // ngModel
   InputString: string = '';
   
-
-  constructor() {
-    console.log(this.FormModule);
-  }
-
+  
   // String interpolation
   changeString() {
     let tempNumber: number = parseInt(this.theNumber);

@@ -1,30 +1,19 @@
-.library {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-}
 
-h1{
-    font-size: 2rem;
-    margin-bottom: 0;
-}
-
-.path {
-
-    & span{
-        position: relative;
-        display: flex;
-        align-items: center;
-        font-size: 1.5rem;
-        margin-bottom: 0;
-        & p{
-            margin-bottom: 0;
-        }
-        & h2 {
-            font-size: 2rem;
-            font-weight: bold;
-            color: coral;
-            margin-bottom: 0;
+.completeFrame {
+    width: 100%;
+    height: 100vh;
+    & .sideFrame {
+        width: 150px;
+        & .libraryHeader {
+            display: flex;
+            margin-top: 15px;
+            justify-content: center;
         }
     }
+    
+  }
+
+.mainFrame {
+    position: relative;
+    width: calc(100vw - 150px) ;
 }
