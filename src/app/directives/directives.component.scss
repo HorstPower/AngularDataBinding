@@ -147,7 +147,11 @@ ul {
     }
 }
 
-
+.colorChoose {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 100px;
+}
 
 .color {
     color: #fa6b0c;
@@ -159,4 +163,8 @@ ul {
 
 .colorAqua {
     color:aqua;
+}
+
+.rem {
+    font-size: 1.4rem;
 }

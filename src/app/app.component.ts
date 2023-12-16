@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -6,6 +6,7 @@ import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
 import { MaterialsModule } from './shared/materials/materials.module';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -19,7 +20,11 @@ import { MaterialsModule } from './shared/materials/materials.module';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+
+  ngOnInit(): void {
+    
+  }
   title = 'Basics';
 
   library: string[] = ['databinding', 'directives', 'next..'];

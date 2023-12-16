@@ -65,7 +65,7 @@
 
                         <div class="forInput">
                                 <mat-form-field>
-                                    <mat-label>item.name {{ inputName }}</mat-label>
+                                    <mat-label>item.name</mat-label>
                                     <input matInput [(ngModel)]="inputName">
                                 </mat-form-field>
                             <div class="buttons">
@@ -77,8 +77,55 @@
                 </span>
             </div>
             <mat-divider></mat-divider>
+            
             <div class="logic">
-                
+                <span class="hint">
+                    <p>interface colors  &#123; id: number, color: 'red'..  &#125;</p>
+               </span>
+                <!-- for Schleife -->
+                <span class="directives color">
+                    <!-- html Utf-codierung -->
+                        
+                        <p class="decl">&#64;switch</p>
+                        <span class="colorAqua"><p>&#40;</p>
+                                <mat-form-field #colorUser class="colorChoose" appearance="outline" color="accent">
+                                        <mat-label>Color</mat-label>
+                                        <mat-select >
+                                        @for (color of colors; track color.id) {
+                                            <mat-option [value]="color.color">{{color.color}}</mat-option>
+
+                                        }
+                                        </mat-select>
+                                </mat-form-field> 
+                            <p>&#41; &#123;</p>
+                        </span><br>
+                        @switch (color){
+                            @case("red") {
+                                <div class="inline indentation">
+                                    <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
+                                </div>
+                            }
+                            @case("green") {
+                                <div class="inline indentation">
+                                    <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
+                                </div>
+                            }
+                            @case("blue") {
+                                <div class="inline indentation">
+                                    <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
+                                </div>
+                            }
+                        }
+                        <p>&#125;</p><p class="decl">&#64;case <p>&#40; "<span class="rem" style="color:crimson">red</span>" &#41;</p><p>&#160;&#123;</p><br>
+                        
+                        <p>&#125;</p><p class="decl">&#64;case <p>&#40; "<span class="rem" style="color:chartreuse">red</span>" &#41;</p><p>&#160;&#123;</p><br>
+                        
+                        <p>&#125;</p><p class="decl">&#64;case <p>&#40; "<span class="rem" style="color:darkturquoise">red</span>" &#41;</p><p>&#160;&#123;</p><br>
+
+                        <p>&#125;</p><p class="decl">&#64;default <p>&#123;</p><br>
+                        <br><p>&#125;</p><br>
+                        
+                </span>
             </div>
             
         </mat-list>

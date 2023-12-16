@@ -9,6 +9,11 @@ interface item {
   name: string;
 }
 
+interface color {
+  id: number;
+  color: string;
+}
+
 @Component({
   selector: 'app-directives',
   standalone: true,
@@ -54,6 +59,15 @@ export class DirectivesComponent {
       }
     }
   }
+
+  // Switch
+  colors: color[]= [
+    {id: 1, color: 'red'},
+    {id: 2, color: 'green'},
+    {id: 3, color: 'blue'},
+    {id: 4, color: 'undefined'},
+  ];
+  color: string = 
 
 
   // Property binding
