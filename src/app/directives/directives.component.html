@@ -90,41 +90,50 @@
                         <span class="colorAqua"><p>&#40;</p>
                                 <mat-form-field #colorUser class="colorChoose" appearance="outline" color="accent">
                                         <mat-label>Color</mat-label>
-                                        <mat-select >
+                                        <mat-select (selectionChange)="switchColor($event.value)">
                                         @for (color of colors; track color.id) {
-                                            <mat-option [value]="color.color">{{color.color}}</mat-option>
-
+                                            <mat-option [value]="color.id">{{color.color}}</mat-option>
+                                            
                                         }
                                         </mat-select>
                                 </mat-form-field> 
                             <p>&#41; &#123;</p>
                         </span><br>
+                        <p>&#125;</p><p class="decl">&#64;case <p>&#40; "<span class="rem" style="color:crimson">red</span>" &#41;</p><p>&#160;&#123;</p><br>
                         @switch (color){
                             @case("red") {
                                 <div class="inline indentation">
                                     <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
-                                </div>
+                                </div><br>
                             }
+                        }
+                        <p>&#125;</p><p class="decl">&#64;case <p>&#40; "<span class="rem" style="color:chartreuse">green</span>" &#41;</p><p>&#160;&#123;</p><br>
+                        @switch (color){
                             @case("green") {
                                 <div class="inline indentation">
                                     <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
-                                </div>
+                                </div><br>
                             }
+                        }
+                        <p>&#125;</p><p class="decl">&#64;case <p>&#40; "<span class="rem" style="color:darkturquoise">blue</span>" &#41;</p><p>&#160;&#123;</p><br>
+                        @switch (color){
                             @case("blue") {
                                 <div class="inline indentation">
                                     <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
-                                </div>
+                                </div><br>
                             }
                         }
-                        <p>&#125;</p><p class="decl">&#64;case <p>&#40; "<span class="rem" style="color:crimson">red</span>" &#41;</p><p>&#160;&#123;</p><br>
-                        
-                        <p>&#125;</p><p class="decl">&#64;case <p>&#40; "<span class="rem" style="color:chartreuse">red</span>" &#41;</p><p>&#160;&#123;</p><br>
-                        
-                        <p>&#125;</p><p class="decl">&#64;case <p>&#40; "<span class="rem" style="color:darkturquoise">red</span>" &#41;</p><p>&#160;&#123;</p><br>
-
                         <p>&#125;</p><p class="decl">&#64;default <p>&#123;</p><br>
+                        @if(color != "red" && color != "green" && color != "blue") {
+                            @switch (color){
+                                @default() {
+                                    <div class="inline indentation">
+                                        <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
+                                    </div><br>
+                                }
+                            }
+                        }
                         <br><p>&#125;</p><br>
-                        
                 </span>
             </div>
             

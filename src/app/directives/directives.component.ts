@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { Form, FormsModule } from '@angular/forms';
 
 import { MaterialsModule } from '../shared/materials/materials.module';
 
@@ -32,6 +32,7 @@ export class DirectivesComponent {
   ifBoolean: boolean = true;
 
 
+
   toggelIfBoolean() {
     this.ifBoolean = !this.ifBoolean;
   }
@@ -60,22 +61,23 @@ export class DirectivesComponent {
     }
   }
 
-  // Switch
+
+  
   colors: color[]= [
-    {id: 1, color: 'red'},
-    {id: 2, color: 'green'},
-    {id: 3, color: 'blue'},
-    {id: 4, color: 'undefined'},
+    {id: 0, color: 'red'},
+    {id: 1, color: 'green'},
+    {id: 2, color: 'blue'},
+    {id: 3, color: 'undefined'},
   ];
-  color: string = 
+  color: string= 'red';
 
-
+  switchColor(event: number) {
+    console.log(this.colors[event].color);
+    this.color = this.colors[event].color;
+  }
   // Property binding
   hideButton: boolean = false;
 
-  // ngModel
-  InputString: string = '';
-  
 
   constructor() {
   }
