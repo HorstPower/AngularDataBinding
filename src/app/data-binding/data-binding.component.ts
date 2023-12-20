@@ -18,10 +18,9 @@ import { MaterialsModule } from '../shared/materials/materials.module';
 })
 export class DataBindingComponent	{
 
-
   FormModule: any = new FormsModule();
   
-
+  
   // String interpolation
   theNumber: string = '0';
   theString: string = `${this.theNumber} x Hello World`;

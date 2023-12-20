@@ -9,6 +9,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
+import {MatGridListModule} from '@angular/material/grid-list';
+
 
 
 
@@ -23,6 +25,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatSelectModule,
     MatInputModule,
     MatFormFieldModule,
+    MatGridListModule,
   ]
 })
 export class MaterialsModule { }

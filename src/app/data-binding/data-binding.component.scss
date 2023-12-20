@@ -1,23 +1,25 @@
 .BindingView {
+    display: flex;
     position: reltaive;
     width: auto;
     height: 100vH;
     box-sizing: border-box;
-    display: flex;
-    padding: 15px;
+    padding: 45px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-
 }
 
 mat-Card{
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    justify-content: start;
+
     padding: 10px;
-    min-width: 280px;
+    min-width: 290px;
     height: 350px;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
 }
 
 mat-divider{

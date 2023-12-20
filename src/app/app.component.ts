@@ -27,5 +27,5 @@ export class AppComponent implements OnInit {
   }
   title = 'Basics';
 
-  library: string[] = ['databinding', 'directives', 'next..'];
+  library: string[] = ['databinding', 'directives', 'angular-grid'];
 }

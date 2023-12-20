@@ -6,7 +6,6 @@
         <mat-nav-list role="navigation" #selection >
             @for (selection of library; track selection) {
                 <a href="/{{selection}}" mat-list-item>{{selection}}</a>
-                <!-- <mat-list-item ><a routerLink="/databinding"></a>{{selection}}</mat-list-item> -->
                 <mat-divider></mat-divider>
             }
         </mat-nav-list>
