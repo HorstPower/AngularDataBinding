@@ -25,13 +25,13 @@ interface color {
   templateUrl: './directives.component.html',
   styleUrl: './directives.component.scss'
 })
+
 export class DirectivesComponent {
 
   // Structural directives
+
   // If/Else
   ifBoolean: boolean = true;
-
-
 
   toggelIfBoolean() {
     this.ifBoolean = !this.ifBoolean;
@@ -40,7 +40,10 @@ export class DirectivesComponent {
   // For
   items: item[]= [];
   index: number= 0;
+
   hideForButton: boolean= true;
+  
+
   formmodule: any = new FormsModule();
   inputName: string= '';
 
@@ -61,42 +64,19 @@ export class DirectivesComponent {
     }
   }
 
+  // Switch
+  color: string= '';
 
-  
   colors: color[]= [
     {id: 0, color: 'red'},
     {id: 1, color: 'green'},
     {id: 2, color: 'blue'},
-    {id: 3, color: 'undefined'},
+    {id: 3, color: 'white'},
+    {id: 4, color: 'undefined'},
   ];
-  color: string= 'red';
 
   switchColor(event: number) {
-    console.log(this.colors[event].color);
     this.color = this.colors[event].color;
-  }
-  // Property binding
-  hideButton: boolean = false;
-
-
-  constructor() {
-  }
-
-  // String interpolation
-  changeString() {
-  }
-
-  // Property binding
-  togglehide() {
-    this.hideButton = !this.hideButton;
-
-
-    if (this.ifBoolean) {
-      this.ifBoolean = false;
-    } else {
-      this.ifBoolean = true;
-    }
-    
   }
 
 

@@ -1,15 +1,80 @@
-.BindingView {
+.mainFrame {
     position: absolute;
-    width: 100%;
-    height: 100vH;
-    box-sizing: border-box;
     display: flex;
-    padding-left: 150px;
-    padding-right: 150px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    
+    padding: 20px;
+
+}
+.line {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    height: 320px;
+    gap:20px;
+    padding-right: 20px;
+    margin-left: 25px;
+
+    background-color: rgb(32, 31, 31);
+    border-radius: 5px;
+}
+.lineLabel {    
+    display: flex;
+    transform: rotate(-90deg);
+    width: 10px;
+    margin-left: 20px;
+    align-items: center;
+
+    flex-direction: column;
+    align-self: center;
+    #lineHeader{
+        font-size: 1.7em;
+        font-weight: 500;
+        color: #fa6b0c;
+        margin-bottom: 5px;
+    }
+    #lineSubHeader{
+        display: flex;
+        align-self: center;
+
+        font-size: 1.3em;
+        font-weight: 400;
+        color: grey;
+        white-space: nowrap;
+    }
+
+}
+
+.symbols {
+    display: flex;
+    width: 70%;
+    height: 20px;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-
+    justify-content: center;
+    & mat-icon{
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: auto;
+        font-size: 3rem;
+        color: white;
+        &~h1 {
+            display: flex;
+            justify-content: start;
+            margin-top: 15px;
+            width: 1.4em;
+            color:#fa6b0c;
+        }
+    }
 }
 
 
@@ -17,8 +82,19 @@ mat-Card{
     display: flex;
     flex-direction: column;
     padding: 10px;
-    min-width: 350px;
-    height: auto;
+    min-width: 300px;
+    min-height: auto;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+.cardHeaderText{
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #fa6b0c;
 }
 
 mat-divider{
@@ -29,45 +105,6 @@ mat-divider{
     color: rgb(199, 199, 199);
 }
 
-h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 1.5em;
-    font-weight: 400;
-    color: #fa6b0c;
-    text-align: start;
-}
-
-h2 {
-    margin: 0;
-    padding: 0;
-    font-size: 1.2em;
-    font-style: bold;
-}
-
-.symbols {
-    display: flex;
-    width: 70%;
-    height: 40px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    & h1 {
-        display: flex;
-        justify-content: center;
-        width: 1.4em;
-    }
-    & mat-icon{
-        margin: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        width: auto;
-        font-size: 3rem;
-        color: white;
-    }
-}
 
 .logic {
     font-size: large;
@@ -75,12 +112,14 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    & .hint{
+    & .discribtion{
         padding-top: 5px;
         font-size: 0.8em;
         & p{
+            display: inline;
             margin: 0;
             padding: 0;
+            color: white;
         }
     }
 
@@ -105,11 +144,12 @@ h2 {
 }
 
 .forInput {
-    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    float: right;
+    width: 70%;
     & mat-form-field {
         height: 90px;
     }
@@ -146,6 +186,8 @@ ul {
         }
     }
 }
+
+
 
 .colorChoose {
     margin-left: 20px;

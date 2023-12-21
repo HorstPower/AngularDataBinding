@@ -1,68 +1,99 @@
-<div class="BindingView">
+<div class="mainFrame">
 
-    <!-- String Databinding -->
-    <mat-card>
-        <mat-list>
-            <mat-list-item><h1>Structural</h1></mat-list-item>
-            <mat-list-item><h2>Built-in direcives</h2></mat-list-item>
-            <mat-divider></mat-divider>
-            <div class="logic">
-                <div class="symbols"><mat-icon>javascript</mat-icon><h1>-></h1><mat-icon>html</mat-icon></div>
-                <span class="hint">
-                     <p>verändern das DOM Layout</p>
-                     <p>durch add/remove DOM elemente</p> 
-                </span>
-                <!-- If/ Else -->
-                <span class="directives color">
-                    <!-- html Utf-codierung -->
-                        <p class="decl">&#64;if</p>
-                        <p>&#40;<button class="IfButton" (click)="toggelIfBoolean()" mat-raised-button color="warn">{{ ifBoolean }}</button>&#41; &#123;</p><br>
-                        @if ( ifBoolean ) {
-                            <div class="inline indentation"> 
-                                <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
-                            </div>
-                        }
-                        <br><p>&#125;</p><p class="decl">&#64;else</p><p>&#160;&#123;</p><br>
-                        @if ( !ifBoolean ) {
-                            <div class="inline indentation">
-                                <p>&#60;</p>div<p>&#62; i Bims der Else &#60;&#47;</p>div<p>&#62;</p>
-                            </div>
-                        }
-                        <br><p>&#125;</p>
-                </span>
+    <!-- Structural line -->
+    <div class="line">
+
+        <div class="lineLabel">
+            <div id="lineHeader">Structural</div>
+            <div id="lineSubHeader">Built-in direcives 
+                <div class="symbols"><mat-icon>javascript</mat-icon><h1>-></h1><mat-icon>html</mat-icon>
+                </div>
             </div>
+        </div>
 
-            <mat-divider></mat-divider>
+        <!-- if/Else Card -->
+        <mat-card>
+            <mat-list>
+                <!-- discribtion -->
+                <mat-list-item><h1 class="cardHeaderText">If / Else</h1></mat-list-item>
+                <mat-divider></mat-divider>
+                <div class="logic">
 
-            <div class="logic">
-                <span class="hint">
-                    <p>interface items  &#123; id: number, name: string  &#125;</p>
-               </span>
-                <!-- for Schleife -->
-                <span class="directives color">
-                    <!-- html Utf-codierung -->
+                    <span class="discribtion">
+                        <div><p>verändern</p> das <p>DOM</p> Layout</div>
+                        <div>durch <p>add/remove</p> von elemente</div> 
+                   </span>
+
+                    <!-- if/Else Code -->
+                    <span class="directives color">
+                        <!--  @if ( Button ) {  -->
+                        <p class="decl"> &#64;if </p><p> &#40; <button mat-raised-button color="warn" class="IfButton" (click)="toggelIfBoolean()" >{{ ifBoolean }}</button> &#41; &#123; </p><br>
+                            
+                            @if ( ifBoolean ) {
+                                <div class="inline indentation"> 
+                                    <!-- <div> i Bims, der Div </div> -->
+                                    <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
+                                </div>
+                            }
+                        <!--  }@else {  -->
+                        <br><p>&#125;</p><p class="decl">&#64;else</p><p>&#160;&#123;</p><br>
+
+                            @if ( !ifBoolean ) {
+                                <div class="inline indentation">
+                                    <!-- <div> i Bims, der Else </div> -->
+                                    <p>&#60;</p>div<p>&#62; i Bims der Else &#60;&#47;</p>div<p>&#62;</p>
+                                </div>
+                            }
+                        <!-- } -->
+                        <br><p>&#125;</p>
+                    </span>
+                </div>
+            </mat-list>
+        </mat-card>
+
+        <!-- For Card -->
+        <mat-card>
+            <mat-list>
+
+                <mat-list-item><h1 class="cardHeaderText">For Schleife</h1></mat-list-item>
+                <mat-divider></mat-divider>
+                <div class="logic">
+
+                    <span class="discribtion">
+                        <div>interface items  &#123; <p>id</p>: number, <p>name</p>: string  &#125;</div>
+                    </span>
+
+                    <!-- for Schleife Code-->
+                    <span class="directives color">
+                        <!-- <ul> -->
                         <p>&#60;</p>ul<p>&#62;</p><br>
-                        <p class="decl">&#64;for</p>
-                        <span class="colorAqua"><p>&#40;</p> item <p>of</p> items<span style="color:darkgrey">[ {{ index }} ]</span><p>; track</p> item.id <p>&#41; &#123;</p></span>
-                        <ul>
-                            @for(item of items; track item.id) {
-                                <li class="forLi">
-                                    <p>&#60;</p>li<p>&#62;</p>
-                                    <p class="nameHint"> item.name: </p>
-                                    <p style="color: white;">{{item.name}}</p>
-                                    <p>&#60;&#47;</p>li<p>&#62;</p> 
+                        <!--  @for( item of items [ ]; track item.de ) { -->
+                        <p class="decl"> &#64; for </p><span class="colorAqua"> <p>&#40;</p> item <p>of</p> items<span style="color:darkgrey">[ {{ index }} ]</span> <p>; track</p> item.id <p>&#41; &#123;</p> </span>
+                            
+                            <ul>
+                                @for(item of items; track item.id) {
+                                    <li class="forLi">
+                                        <p>&#60;</p>li<p>&#62;</p>
+                                        <p class="nameHint"> item.name: </p>
+                                        <p style="color: white;">{{item.name}}</p>
+                                        <p>&#60;&#47;</p>li<p>&#62;</p> 
                                     <span class="forHint"> id: {{item.id}}</span>
                                 </li>
                             }
                         </ul>
+                        <!-- }@empty { -->
                         <p>&#125;</p><p class="decl">&#64;empty</p><p>&#160;&#123;</p><br>
+
                         @for(item of items; track item.id){
                         }@empty {
                         <span class="colorAqua indentation"> is empty</span>
                         }
+                        <!-- } -->
                         <br><p>&#125;</p><br>
+                        <!-- </ul> -->
                         <p>&#60;&#47;</p>ul<p>&#62;</p>
 
+                        <!-- InputField -->
                         <div class="forInput">
                                 <mat-form-field>
                                     <mat-label>item.name</mat-label>
@@ -73,75 +104,145 @@
                                 <button style="width: 50px" mat-raised-button color="warn" [disabled]="hideForButton" (click)="delete()"> del. </button>
                             </div>
                         </div>
+                    </span>
+                </div>
+            </mat-list>
+        </mat-card>
 
-                </span>
-            </div>
-            <mat-divider></mat-divider>
-            
-            <div class="logic">
-                <span class="hint">
-                    <p>interface colors  &#123; id: number, color: 'red'..  &#125;</p>
-               </span>
-                <!-- for Schleife -->
-                <span class="directives color">
-                    <!-- html Utf-codierung -->
-                        
-                        <p class="decl">&#64;switch</p>
-                        <span class="colorAqua"><p>&#40;</p>
+        <!-- Switch Card -->
+        <mat-card>
+            <mat-list>
+
+                <mat-list-item><h1 class="cardHeaderText">Switch Case</h1></mat-list-item>
+                <mat-divider></mat-divider>
+                
+                <div class="logic">
+
+                    <span class="discribtion">
+                        <div>interface colors  &#123; <p>id</p>: number, <p>color</p>: string  &#125;</div>
+                    </span>
+
+                    <!-- Switch/Case Code -->
+                    <span class="directives color">
+                        <!-- @switch( -->
+                        <p class="decl">&#64;switch</p> <p>&#40;</p>
+                            <!-- ColorChooseField -->
+                            <span class="colorAqua">  
                                 <mat-form-field #colorUser class="colorChoose" appearance="outline" color="accent">
-                                        <mat-label>Color</mat-label>
-                                        <mat-select (selectionChange)="switchColor($event.value)">
+                                    <mat-label>Color</mat-label>
+                                    <mat-select (selectionChange)="switchColor($event.value)">
+
                                         @for (color of colors; track color.id) {
                                             <mat-option [value]="color.id">{{color.color}}</mat-option>
-                                            
                                         }
-                                        </mat-select>
-                                </mat-form-field> 
-                            <p>&#41; &#123;</p>
-                        </span><br>
-                        <p>&#125;</p><p class="decl">&#64;case <p>&#40; "<span class="rem" style="color:crimson">red</span>" &#41;</p><p>&#160;&#123;</p><br>
-                        @switch (color){
-                            @case("red") {
-                                <div class="inline indentation">
-                                    <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
-                                </div><br>
-                            }
-                        }
-                        <p>&#125;</p><p class="decl">&#64;case <p>&#40; "<span class="rem" style="color:chartreuse">green</span>" &#41;</p><p>&#160;&#123;</p><br>
-                        @switch (color){
-                            @case("green") {
-                                <div class="inline indentation">
-                                    <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
-                                </div><br>
-                            }
-                        }
-                        <p>&#125;</p><p class="decl">&#64;case <p>&#40; "<span class="rem" style="color:darkturquoise">blue</span>" &#41;</p><p>&#160;&#123;</p><br>
-                        @switch (color){
-                            @case("blue") {
-                                <div class="inline indentation">
-                                    <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
-                                </div><br>
-                            }
-                        }
-                        <p>&#125;</p><p class="decl">&#64;default <p>&#123;</p><br>
-                        @if(color != "red" && color != "green" && color != "blue") {
+                                    </mat-select>
+                                </mat-form-field>
+                            </span>
+                        <!-- ){ -->
+                        <p>&#41; &#123;</p><br>
+                        <!-- }@case( "red" ) { -->
+                        <p>&#125;</p> <p class="decl">&#64;case <p>&#40; "<span class="rem" style="color:crimson">red</span>" &#41;</p> <p>&#160;&#123;</p> <br>
+
                             @switch (color){
-                                @default() {
+                                @case("red") {
                                     <div class="inline indentation">
                                         <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
                                     </div><br>
                                 }
                             }
-                        }
+                        <!-- }@case( "green" ) { -->
+                        <p>&#125;</p> <p class="decl">&#64;case <p>&#40; "<span class="rem" style="color:chartreuse">green</span>" &#41;</p> <p>&#160;&#123;</p> <br>
+                            
+                            @switch (color){
+                                @case("green") {
+                                    <div class="inline indentation">
+                                        <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
+                                    </div><br>
+                                }
+                            }
+                        <!-- }@case( "blue" ) { -->
+                        <p>&#125;</p> <p class="decl">&#64;case <p>&#40; "<span class="rem" style="color:darkturquoise">blue</span>" &#41;</p> <p>&#160;&#123;</p> <br>
+                           
+                            @switch (color){
+                                @case("blue") {
+                                    <div class="inline indentation">
+                                        <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
+                                    </div><br>
+                                }
+                            }
+                        <!-- }@default { -->
+                        <p>&#125;</p><p class="decl">&#64;default <p>&#123;</p><br>
+
+                            @if(color != "red" && color != "green" && color != "blue") {
+                                @switch (color){
+                                    @default() {
+                                        <div class="inline indentation">
+                                            <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
+                                        </div><br>
+                                    }
+                                }
+                            }
+                        <!-- } -->
                         <br><p>&#125;</p><br>
-                </span>
+                    </span>
+                </div> 
+            </mat-list>
+        </mat-card>
+    </div>
+
+    <!-- Second line -->
+    <div class="line">
+
+        <div class="lineLabel">
+            <div id="lineHeader">attribute</div>
+            <div id="lineSubHeader">Built-in direcives 
+                <div class="symbols"><mat-icon>javascript</mat-icon><h1>-></h1><mat-icon>html</mat-icon>
+                </div>
             </div>
-            
-        </mat-list>
-    </mat-card>
+        </div>
+
+        <!-- NgStyle Card -->
+        <mat-card>
+            <mat-list>
+                <!-- discribtion -->
+                <mat-list-item><h1 class="cardHeaderText">[ngStyle]</h1></mat-list-item>
+                <mat-divider></mat-divider>
+                <div class="logic">
+
+                    <span class="discribtion">
+                        <div><p>verändern</p> das <p>DOM</p> Layout</div>
+                        <div>durch <p>add/remove</p> von elemente</div> 
+                   </span>
+
+                    <!-- if/Else Code -->
+                    <span class="directives color">
+                        <!--  @if ( Button ) {  -->
+                        <p class="decl"> &#64;if </p><p> &#40; <button mat-raised-button color="warn" class="IfButton" (click)="toggelIfBoolean()" >{{ ifBoolean }}</button> &#41; &#123; </p><br>
+                            
+                            @if ( ifBoolean ) {
+                                <div class="inline indentation"> 
+                                    <!-- <div> i Bims, der Div </div> -->
+                                    <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
+                                </div>
+                            }
+                        <!--  }@else {  -->
+                        <br><p>&#125;</p><p class="decl">&#64;else</p><p>&#160;&#123;</p><br>
+
+                            @if ( !ifBoolean ) {
+                                <div class="inline indentation">
+                                    <!-- <div> i Bims, der Else </div> -->
+                                    <p>&#60;</p>div<p>&#62; i Bims der Else &#60;&#47;</p>div<p>&#62;</p>
+                                </div>
+                            }
+                        <!-- } -->
+                        <br><p>&#125;</p>
+                    </span>
+                </div>
+            </mat-list>
+        </mat-card>
 
      <!-- Property Binding -->
-     <mat-card>
+     <!-- <mat-card>
         <mat-list>
             <mat-list-item><h1>Property Binding</h1></mat-list-item>
             <mat-list-item><h2>One-Way-Binding</h2></mat-list-item>
@@ -157,10 +258,10 @@
 
             </div>
         </mat-list>
-    </mat-card>
+    </mat-card> -->
 
      <!-- Event Binding -->
-     <mat-card>
+     <!-- <mat-card>
         <mat-list>
             <mat-list-item><h1>Event Binding</h1></mat-list-item>
             <mat-list-item><h2>Event-Binding</h2></mat-list-item>
@@ -176,8 +277,8 @@
 
             </div>
         </mat-list>
-    </mat-card>
+    </mat-card> -->
 
-</div>
+    </div>
 
 
