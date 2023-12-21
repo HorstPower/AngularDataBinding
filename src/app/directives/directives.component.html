@@ -4,24 +4,25 @@
     <div class="line">
 
         <div class="lineLabel">
-            <div id="lineHeader">Structural</div>
-            <div id="lineSubHeader">Built-in direcives 
+            <div class="lineHeader">Structural</div>
+            <div class="linePrinciple"><p>add</p> / <p>remove</p> Dom elements</div>
+            <div class="lineSubHeader">Built-in direcives 
                 <div class="symbols"><mat-icon>javascript</mat-icon><h1>-></h1><mat-icon>html</mat-icon>
                 </div>
             </div>
+            
         </div>
 
         <!-- if/Else Card -->
         <mat-card>
             <mat-list>
                 <!-- discribtion -->
-                <mat-list-item><h1 class="cardHeaderText">If / Else</h1></mat-list-item>
+                <mat-list-item><h1 class="cardHeaderText">&#64;If / Else</h1></mat-list-item>
                 <mat-divider></mat-divider>
                 <div class="logic">
 
                     <span class="discribtion">
-                        <div><p>verändern</p> das <p>DOM</p> Layout</div>
-                        <div>durch <p>add/remove</p> von elemente</div> 
+                        <div>der <p>Ausdruck</p> ist eine <p>Js</p> Variable</div>
                    </span>
 
                     <!-- if/Else Code -->
@@ -55,7 +56,7 @@
         <mat-card>
             <mat-list>
 
-                <mat-list-item><h1 class="cardHeaderText">For Schleife</h1></mat-list-item>
+                <mat-list-item><h1 class="cardHeaderText">&#64;For Schleife</h1></mat-list-item>
                 <mat-divider></mat-divider>
                 <div class="logic">
 
@@ -113,7 +114,7 @@
         <mat-card>
             <mat-list>
 
-                <mat-list-item><h1 class="cardHeaderText">Switch Case</h1></mat-list-item>
+                <mat-list-item><h1 class="cardHeaderText">&#64;Switch Case</h1></mat-list-item>
                 <mat-divider></mat-divider>
                 
                 <div class="logic">
@@ -127,7 +128,6 @@
                         <!-- @switch( -->
                         <p class="decl">&#64;switch</p> <p>&#40;</p>
                             <!-- ColorChooseField -->
-                            <span class="colorAqua">  
                                 <mat-form-field #colorUser class="colorChoose" appearance="outline" color="accent">
                                     <mat-label>Color</mat-label>
                                     <mat-select (selectionChange)="switchColor($event.value)">
@@ -137,7 +137,6 @@
                                         }
                                     </mat-select>
                                 </mat-form-field>
-                            </span>
                         <!-- ){ -->
                         <p>&#41; &#123;</p><br>
                         <!-- }@case( "red" ) { -->
@@ -194,9 +193,10 @@
     <div class="line">
 
         <div class="lineLabel">
-            <div id="lineHeader">attribute</div>
-            <div id="lineSubHeader">Built-in direcives 
-                <div class="symbols"><mat-icon>javascript</mat-icon><h1>-></h1><mat-icon>html</mat-icon>
+            <div class="lineHeader">attribute</div>
+            <div class="linePrinciple"><p>change</p> Dom elements</div>
+            <div class="lineSubHeader">Built-in direcives 
+                <div class="symbols"><mat-icon>javascript</mat-icon><h1>-></h1><mat-icon>css</mat-icon>
                 </div>
             </div>
         </div>
@@ -205,38 +205,67 @@
         <mat-card>
             <mat-list>
                 <!-- discribtion -->
-                <mat-list-item><h1 class="cardHeaderText">[ngStyle]</h1></mat-list-item>
+                <mat-list-item><h1 class="cardHeaderText">[ ngStyle ]</h1></mat-list-item>
                 <mat-divider></mat-divider>
                 <div class="logic">
 
                     <span class="discribtion">
-                        <div><p>verändern</p> das <p>DOM</p> Layout</div>
-                        <div>durch <p>add/remove</p> von elemente</div> 
+                        <div>verändert den <p>style</p> dynamisch.</div>
+                        <div>style = <p>css Eigenschaft</p></div> 
                    </span>
 
-                    <!-- if/Else Code -->
+                    <!-- [ngStyle] Code -->
                     <span class="directives color">
-                        <!--  @if ( Button ) {  -->
-                        <p class="decl"> &#64;if </p><p> &#40; <button mat-raised-button color="warn" class="IfButton" (click)="toggelIfBoolean()" >{{ ifBoolean }}</button> &#41; &#123; </p><br>
-                            
-                            @if ( ifBoolean ) {
-                                <div class="inline indentation"> 
-                                    <!-- <div> i Bims, der Div </div> -->
-                                    <p>&#60;</p>div<p>&#62; i Bims, der Div &#60;&#47;</p>div<p>&#62;</p>
-                                </div>
-                            }
-                        <!--  }@else {  -->
-                        <br><p>&#125;</p><p class="decl">&#64;else</p><p>&#160;&#123;</p><br>
-
-                            @if ( !ifBoolean ) {
-                                <div class="inline indentation">
-                                    <!-- <div> i Bims, der Else </div> -->
-                                    <p>&#60;</p>div<p>&#62; i Bims der Else &#60;&#47;</p>div<p>&#62;</p>
-                                </div>
-                            }
-                        <!-- } -->
-                        <br><p>&#125;</p>
+                        <!--  <div [ngStyle]="  -->
+                        <p>&#60;</p>div <p class="decl">[ngStyle]=&#34;
+                            <span>
+                                <mat-form-field #styleChoose class="styleChoose" appearance="outline" color="accent">
+                                    <mat-label>Css-style</mat-label>
+                                    <mat-select (selectionChange)="switchStyle($event.value)">
+                                        @for (style of styles; track style.id) {
+                                            <mat-option [value]="style.id">{{style.attribute}}</mat-option>
+                                        }
+                                    </mat-select>
+                                </mat-form-field>
+                            </span>
+                        <!-- ">-->
+                        &#34;</p> <p>&#62;</p><br>
+                        <!-- </div> -->
+                        <p>&#60;&#47;</p>div<p>&#62;</p> 
                     </span>
+                </div>
+                <mat-divider></mat-divider>
+
+                <div class="showArea">
+                    <!-- left Css Class -->
+                    <mat-card class="cssStyle css">
+                        <mat-card-header>
+                            <mat-card-title>Css Style</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                                <!-- div { -->
+                                <p><span>.div</span> &#123;</p>
+                                    <div>
+                                        color=      <br>
+                                        border=     <br>
+                                        color=      <br>
+                                        color=      <br>
+                                    </div>
+                                <br>
+                                &#125;
+                        </mat-card-content>
+                    </mat-card>
+                    <mat-divider vertical="true"></mat-divider>
+                    <mat-card class="cssStyle div">
+                        <mat-card-header>
+                            <mat-card-title>WebSite</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div class="divBox">
+
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
                 </div>
             </mat-list>
         </mat-card>

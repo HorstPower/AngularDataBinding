@@ -14,6 +14,11 @@ interface color {
   color: string;
 }
 
+interface style {
+  id: number;
+  attribute: string;
+}
+
 @Component({
   selector: 'app-directives',
   standalone: true,
@@ -29,7 +34,6 @@ interface color {
 export class DirectivesComponent {
 
   // Structural directives
-
   // If/Else
   ifBoolean: boolean = true;
 
@@ -40,10 +44,7 @@ export class DirectivesComponent {
   // For
   items: item[]= [];
   index: number= 0;
-
   hideForButton: boolean= true;
-  
-
   formmodule: any = new FormsModule();
   inputName: string= '';
 
@@ -79,5 +80,21 @@ export class DirectivesComponent {
     this.color = this.colors[event].color;
   }
 
+
+  // atributtes directives
+  // ngStyle
+  style: string= '';
+
+  styles: style[]= [
+    {id: 0, attribute: 'backGround=red'},
+    {id: 1, attribute: 'backGround=blue'},
+    {id: 2, attribute: 'backGround=green'},
+    {id: 3, attribute: 'backGround=white'},
+    {id: 4, attribute: 'backGround=yellow'},
+  ];
+
+  switchStyle(event: number) {
+    this.style = this.styles[event].attribute;
+  }
 
 }
