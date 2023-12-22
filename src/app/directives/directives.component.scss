@@ -229,23 +229,45 @@ ul {
 }
 
 // ngStyle
+.ngStyleCard {
+    min-width: 430px;
+}
+.ngStyleHtml {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: pre-wrap;
+    padding: 0;
+    & p {
+        margin: 0;
+        padding: 0;
+        & span {
+            display: inline;
+            font-size: 1.2em;
+            font-weight: 400;
+            color: aquamarine;
+            }
+        }
+}
+
 .styleChoose {
     margin-left: 2px;
     margin-right: 2px;
     margin-bottom: -20px;
+    width:215x;
 }
 
 .showArea {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: 140px;
 
     margin-top: 10px;
 }
 
 .cssStyle {
 
-    min-width: 45%;
     & mat-card-header {
         flex-direction: row-reverse;
         margin: 0;
@@ -271,6 +293,7 @@ ul {
 }
 
 .css {
+    min-width: 55%;
     box-shadow: inset 0 0 3px 0 rgba(21, 141, 156, 0.5);
     & mat-card-header {
         & mat-card-title {
@@ -288,6 +311,7 @@ ul {
 }
 
 .div {
+    min-width: 35%;
     box-shadow: inset 0 0 3px 0 rgba(255, 255, 255, 0.5);
     & mat-card-header {
         & mat-card-title {
@@ -301,11 +325,28 @@ ul {
     }
 }
 
-.divBox {
+.ngStyleDivBox {
     display: flex;
     height: 80px;
     width: 80px;
     background-color: rgb(199, 84, 39);
+}
+
+// ngClass
+.ngClassCard {
+    min-width: 380px;
+}
+
+.ngClassButton {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 95%;
+}
+
+
+.neueKlasse{
+    background-color: Blue;
+    rotate: 45deg;
 }
 
 .color {

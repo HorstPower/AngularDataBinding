@@ -202,7 +202,7 @@
         </div>
 
         <!-- NgStyle Card -->
-        <mat-card>
+        <mat-card class="ngStyleCard">
             <mat-list>
                 <!-- discribtion -->
                 <mat-list-item><h1 class="cardHeaderText">[ ngStyle ]</h1></mat-list-item>
@@ -210,34 +210,40 @@
                 <div class="logic">
 
                     <span class="discribtion">
-                        <div>verändert den <p>style</p> dynamisch.</div>
-                        <div>style = <p>css Eigenschaft</p></div> 
+                        <div>verändert den <p>style (Css)</p> dynamisch.</div>
+                        <div>gib bei der For-Schleife die gewünscht zahl<p> in deg </p>ein</div>
+                        <div>statt der Auswahlbox könnte auch eine <p>function()</p> stehen</div>
                    </span>
 
                     <!-- [ngStyle] Code -->
                     <span class="directives color">
-                        <!--  <div [ngStyle]="  -->
-                        <p>&#60;</p>div <p class="decl">[ngStyle]=&#34;
-                            <span>
-                                <mat-form-field #styleChoose class="styleChoose" appearance="outline" color="accent">
-                                    <mat-label>Css-style</mat-label>
-                                    <mat-select (selectionChange)="switchStyle($event.value)">
-                                        @for (style of styles; track style.id) {
-                                            <mat-option [value]="style.id">{{style.attribute}}</mat-option>
-                                        }
-                                    </mat-select>
-                                </mat-form-field>
-                            </span>
-                        <!-- ">-->
-                        &#34;</p> <p>&#62;</p><br>
+                        <!--  <div [ngStyle]="{rotate:  -->
+                        <div class="ngStyleHtml">
+                            <p>&#60;</p>div <span class="decl">[ngStyle]=&#34;&#123;<span class="colorAqua"> rotate:</span></span>
+                                <div class="styleChoose">
+                                    <mat-form-field #styleChoose appearance="outline" color="accent">
+                                        <mat-label>Css-Value</mat-label>
+                                        <mat-select (selectionChange)="switchStyle($event.value)">
+                                            @for (item of items; track item.id) {
+                                                <mat-option [value]="item.id">{{item.name}}</mat-option>
+                                            }
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            <!-- }">-->
+                            <span class="decl">&#125;&#34;</span><p>&#62;</p>
+                        </div>
                         <!-- </div> -->
-                        <p>&#60;&#47;</p>div<p>&#62;</p> 
+                        <p>&#60;&#47;</p>div<p>&#62;</p>
+                    
                     </span>
                 </div>
+
                 <mat-divider></mat-divider>
 
+                <!-- Css | Website -->
                 <div class="showArea">
-                    <!-- left Css Class -->
+                    <!-- Css Class -->
                     <mat-card class="cssStyle css">
                         <mat-card-header>
                             <mat-card-title>Css Style</mat-card-title>
@@ -245,23 +251,24 @@
                         <mat-card-content>
                                 <!-- div { -->
                                 <p><span>.div</span> &#123;</p>
-                                    <div>
-                                        color=      <br>
-                                        border=     <br>
-                                        color=      <br>
-                                        color=      <br>
+                                    <div class="ngStyleDivBoxCode">
+                                        rotate:{{itemValue}}    <br>
+                                                                <br>
                                     </div>
                                 <br>
                                 &#125;
                         </mat-card-content>
                     </mat-card>
+
                     <mat-divider vertical="true"></mat-divider>
+
+                    <!-- Website Show -->
                     <mat-card class="cssStyle div">
                         <mat-card-header>
                             <mat-card-title>WebSite</mat-card-title>
                         </mat-card-header>
                         <mat-card-content>
-                            <div class="divBox">
+                            <div class="ngStyleDivBox" [ngStyle]="{rotate: itemValue}">
 
                             </div>
                         </mat-card-content>
@@ -270,44 +277,73 @@
             </mat-list>
         </mat-card>
 
-     <!-- Property Binding -->
-     <!-- <mat-card>
-        <mat-list>
-            <mat-list-item><h1>Property Binding</h1></mat-list-item>
-            <mat-list-item><h2>One-Way-Binding</h2></mat-list-item>
-            <mat-divider></mat-divider>
-            <div class="logic">
-                <div class="symbols"><mat-icon>javascript</mat-icon><h1>-></h1><mat-icon>html</mat-icon></div>
-                <span class="hint">
-                     <p>die Eigenschaft [disabled] vom button </p>
-                     <p>wird durch eine Variable geändert </p> 
-                </span>
-                
+         <!-- ngClass Card -->
+         <mat-card class="ngClassCard">
+            <mat-list>
+                <!-- discribtion -->
+                <mat-list-item><h1 class="cardHeaderText">[ ngClass ]</h1></mat-list-item>
+                <mat-divider></mat-divider>
+                <div class="logic">
 
+                    <span class="discribtion">
+                        <div>weist eine Klasse zu, wenn die Bedingungen Wahr ist.</div>
+                        <div>1. Klassename , 2. Bedingung</div>
+                   </span>
 
-            </div>
-        </mat-list>
-    </mat-card> -->
+                    <!-- [ngClass] Code -->
+                    <span class="directives color">
+                        <!--  <div [ngClass]="{ Neueklasse:  -->
+                        <div class="ngStyleHtml">
+                            <p>&#60;</p>div <span class="decl">[ngClass]=&#34;&#123;<span class="colorAqua"> NeueKlasse:</span></span>
+                                    <button mat-raised-button color="warn" class="ngClassButton" (click)="toggelngClassBoolean()" >{{ ngClassBoolean }}</button>
+                            <!-- }">-->
+                            <span class="decl">&#125;&#34;</span><p>&#62;</p>
+                        </div>
+                        <!-- </div> -->
+                        <p>&#60;&#47;</p>div<p>&#62;</p>
+                    
+                    </span>
+                </div>
 
-     <!-- Event Binding -->
-     <!-- <mat-card>
-        <mat-list>
-            <mat-list-item><h1>Event Binding</h1></mat-list-item>
-            <mat-list-item><h2>Event-Binding</h2></mat-list-item>
-            <mat-divider></mat-divider>
-            <div class="logic">
-                <div class="symbols"><mat-icon>html</mat-icon><h1>-></h1><mat-icon>javascript</mat-icon></div>
-                <span class="hint">
-                     <p>Das Click Event wird vom </p>
-                     <p> &#60;button&#62; gefeuert  </p> 
-                </span>
+                <mat-divider></mat-divider>
 
+                <!-- Css | Website -->
+                <div class="showArea">
+                    <!-- Css Class -->
+                    <mat-card class="cssStyle css">
+                        <mat-card-header>
+                            <mat-card-title>Css Style</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            @if(ngClassBoolean){
+                                <!-- neueKlasse { -->
+                                <p><span>.neueKlasse</span> &#123;</p>
+                                    <div>
+                                    background-color: Blue; <br>
+                                    rotate: 45deg;          <br>
+                                    </div>
+                                <br>
+                                &#125;
+                            }
+                        </mat-card-content>
+                    </mat-card>
 
+                    <mat-divider vertical="true"></mat-divider>
 
-            </div>
-        </mat-list>
-    </mat-card> -->
+                    <!-- Website Show -->
+                    <mat-card class="cssStyle div">
+                        <mat-card-header>
+                            <mat-card-title>WebSite</mat-card-title>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div class="ngStyleDivBox" [ngClass]="{neueKlasse: ngClassBoolean}">
 
-    </div>
-
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </mat-list>
+        </mat-card>
+        
+</div>
 

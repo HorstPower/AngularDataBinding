@@ -16,7 +16,7 @@ interface color {
 
 interface style {
   id: number;
-  attribute: string;
+  value: string;
 }
 
 @Component({
@@ -83,18 +83,17 @@ export class DirectivesComponent {
 
   // atributtes directives
   // ngStyle
-  style: string= '';
+  itemValue: any= '';
 
-  styles: style[]= [
-    {id: 0, attribute: 'backGround=red'},
-    {id: 1, attribute: 'backGround=blue'},
-    {id: 2, attribute: 'backGround=green'},
-    {id: 3, attribute: 'backGround=white'},
-    {id: 4, attribute: 'backGround=yellow'},
-  ];
 
   switchStyle(event: number) {
-    this.style = this.styles[event].attribute;
+    this.itemValue = this.items[event].name;
   }
 
+  // ngClass
+  ngClassBoolean: boolean = false;
+
+  toggelngClassBoolean() {
+    this.ngClassBoolean = !this.ngClassBoolean;
+  }
 }
