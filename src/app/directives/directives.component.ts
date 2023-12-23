@@ -93,6 +93,7 @@ export class DirectivesComponent {
   // ngClass
   ngClassBoolean: boolean = false;
 
+
   toggelngClassBoolean() {
     this.ngClassBoolean = !this.ngClassBoolean;
   }

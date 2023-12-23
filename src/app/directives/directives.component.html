@@ -28,7 +28,7 @@
                     <!-- if/Else Code -->
                     <span class="directives color">
                         <!--  @if ( Button ) {  -->
-                        <p class="decl"> &#64;if </p><p> &#40; <button mat-raised-button color="warn" class="IfButton" (click)="toggelIfBoolean()" >{{ ifBoolean }}</button> &#41; &#123; </p><br>
+                        <p class="decl"> &#64;if </p><p> &#40; <button mat-raised-button color="warn" class="ifButton" (click)="toggelIfBoolean()" >{{ ifBoolean }}</button> &#41; &#123; </p><br>
                             
                             @if ( ifBoolean ) {
                                 <div class="inline indentation"> 
@@ -268,7 +268,7 @@
                             <mat-card-title>WebSite</mat-card-title>
                         </mat-card-header>
                         <mat-card-content>
-                            <div class="ngStyleDivBox" [ngStyle]="{rotate: itemValue}">
+                            <div class="ngStyleDivBox" [ngStyle]="{rotate:itemValue}">
 
                             </div>
                         </mat-card-content>
@@ -344,6 +344,6 @@
                 </div>
             </mat-list>
         </mat-card>
-        
+
 </div>
 
